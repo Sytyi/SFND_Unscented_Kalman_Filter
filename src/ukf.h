@@ -95,6 +95,11 @@ class UKF {
 
   // Sigma point spreading parameter
   double lambda_;
+
+private:
+  void GenerateSigmaPoints(Eigen::MatrixXd & Xsig_aug);
+  void PredictSigmaPoints(double delta_t, Eigen::MatrixXd & Xsig_aug);
+  void PredictMeanAndCovariance();
 };
 
 #endif  // UKF_H
